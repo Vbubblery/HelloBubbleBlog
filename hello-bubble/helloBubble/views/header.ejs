@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit"/>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<title><%= title %></title>
+<link href="/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+<body style="padding:60px 60px 60px 60px" screen_capture_injected="true">
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+   <div class="navbar-header">
+      <a class="navbar-brand" href="/">Bubble House</a>
+   </div>
+   <div>
+      <ul class="nav navbar-nav">
+         <li id="home"><a href="/">Home</a></li>
+         <li ><a href="#">Node.js</a></li>
+         <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+               Java <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+               <li><a href="#">Android</a></li>
+               <li><a href="#">EJB</a></li>
+               <li><a href="#">Jasper Report</a></li>
+               <li class="divider"></li>
+               <li><a href="#">分离的链接</a></li>
+               <li class="divider"></li>
+               <li><a href="#">另一个分离的链接</a></li>
+            </ul>
+         </li>
+         <li><a href="/article/all">All articles</a></li>
+         <li id="me"><a href="/about_me">About Me</a></li>
+      </ul>
+   </div>
+</nav>
+<script type="text/javascript">
+	if("<%= title %>"=="Bubble House")
+	{
+		var item = document.getElementById('home');
+		item.className="active";
+	}
+	else if ("<%= title %>"=="About Me")
+	{
+		var item = document.getElementById('me');
+		item.className="active";
+	}
+</script>

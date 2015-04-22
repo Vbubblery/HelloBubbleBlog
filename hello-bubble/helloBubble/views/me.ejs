@@ -1,0 +1,48 @@
+<% include header.ejs %>
+<p>
+<span class='text-info'>Me:</span>
+	<%= me.ZHOUJuncheng.name %>
+</p>
+<p>
+	<span class='text-info'>Birthday:</span>
+	<%= me.ZHOUJuncheng.birthday %>
+</p>
+<p>
+	<span class='text-info'>My Universities:</span>
+	<ul>
+		<% me.ZHOUJuncheng.university.forEach(function(item){ %>
+		<li>
+			<%= item %>
+		</li>
+		<% }) %>
+	</ul>
+</p>
+<p>
+	<span class='text-info'>My Major:</span>
+	<%= me.ZHOUJuncheng.major %>
+</p>
+<p>
+	<span class='text-info'>Be adept at:</span>
+	<ul>
+		<% me.ZHOUJuncheng.beadeptat.forEach(function(item){ %>
+		<li>
+			<%= item %>
+		</li>
+		<% }) %>
+	</ul>
+</p>
+<p>
+	<span class='text-info'>Language:</span>
+	<ul>
+		<% me.ZHOUJuncheng.language.forEach(function(item){ %>
+		<li>
+			<%= item %>
+		</li>
+		<% }) %>
+	</ul>
+</p>
+<p>
+	<span class='text-info'>Personal Introduction:</span>
+	<%= me.ZHOUJuncheng.Personalintroduction %>
+</p>
+<% include footer.ejs %>

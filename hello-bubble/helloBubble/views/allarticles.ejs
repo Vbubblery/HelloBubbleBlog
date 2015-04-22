@@ -1,0 +1,25 @@
+<% include header.ejs %>
+<div class="panel-group" id="accordion">
+	<% articles.forEach(function(item){ %>
+  <div class="panel panel-default" class="tooltip-test" data-toggle="tooltip" title="You can click the title: <%= item.title%> to see the details.">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" 
+          href="#<%= item._id %>">
+          <span class="badge"><%= item.pageviews %></span>
+          <%= item.title%>
+        </a>
+      </h4>
+    </div>
+    <div id="<%= item._id %>" class="panel-collapse collapse">
+      <div class="panel-body">
+      <p>
+        <%= item.content %>
+    </p>
+    <p><a href="/article/<%= item.category%>/<%= item._id %>">Details</a>
+      </div>
+    </div>
+  </div>
+  	<% }) %>
+</div>
+<% include footer.ejs %>

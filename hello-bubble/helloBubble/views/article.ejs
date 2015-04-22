@@ -1,0 +1,61 @@
+<% include header.ejs %>
+    <div style="padding:0 100px 0 100px">
+        <div style="border-bottom: 1px dashed #EEE;">
+            <h1>
+                <%=article.title%>
+            </h1>
+            <small class="text-muted">
+                <%=new Date(article.time)%>
+            </small>
+            <small class="text-muted">
+                |
+                <%= article.category.charAt(0).toUpperCase()+article.category.slice(1)
+                %>
+            </small>
+            <small class="text-muted">
+                | Author:
+                <%=article.author%>
+            </small>
+        </div>
+        <div style="border-bottom: 1px dashed #EEE;">
+            <p class="text-center text-primary">
+                <%=new Date(article.lastmodify)%>
+                    <span class="text-warning">
+                        -Modify by
+                        <em>
+                            <%=article.lastmodifyname%>
+                        </em>
+                    </span>
+            </p>
+        </div>
+        <div style="padding:25px 0 25px 0;"></div>
+        <div class="alert alert-info" style="width:auto;height:auto;border:1px solid #DDDDDD">
+            <h4>
+                <%=article.content%>
+            </h4>
+        </div>
+        <ul class="pager">
+        <%if(lart){%>
+  			<li class="previous">
+  				<a href="/article/<%= article.category%>/<%= lart._id %>">&larr; Previous</a>
+  			</li>
+  			<%}%>
+  			<%if(!lart){%>
+  				<li class="previous disabled">
+  				<a href="#">&larr; Previous</a>
+  			</li>
+  			<%}%>
+  		<%if(nart){%>
+  			<li class="next">
+  				<a href="/article/<%= article.category%>/<%= nart._id %>">Next &rarr;
+  				</a>
+  			</li>
+  		<%}%>
+  			<%if(!nart){%>
+  				<li class="next disabled">
+  				<a>Next &rarr;</a>
+  			</li>
+  			<%}%>
+		</ul>
+    </div>
+    <% include footer.ejs %>
